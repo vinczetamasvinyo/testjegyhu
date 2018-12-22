@@ -667,7 +667,7 @@ if __name__ == "__main__":
     teszt1 = 'Főoldalon jegyek számának a megnézése'
     teszt2 = 'Teszt során azt nézzük, hogy a főoldalon a jegyek száma a megadott értékek közé esik-e.'
     elem = '/html/body/div[1]/div[4]/div[1]/div/div/section/p[2]/a/span[2]'
-    minimum = 6000000
+    minimum = 5800000
     maximum = 11000000
     lista, hibalista = \
         kiemelt_ajanlat_cs.megnezprogramjegydb(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'jegyszam', 13, elem,
