@@ -1495,7 +1495,9 @@ def ajanlodb(driver, varbongeszo, varido, varurl, varteszteset_neve, vartesztese
                 print('nincs cooki')
                 varlinkdb = 1
         try:
-            ajanlodarab = driver.find_elements_by_class_name('mainImgContainer')
+            # ajanlodarab = driver.find_elements_by_class_name('mainImgContainer')
+            css = ".programBox.large-4.small-6.columns.suggested_box"
+            ajanlodarab = driver.find_elements_by_css_selector(css)
         except NoSuchElementException:
             teszteset_sikeres = False
             hibalista.append('Az oldalon nem található ajánló')
