@@ -647,7 +647,7 @@ if __name__ == "__main__":
     teszt2 = 'Teszt során azt nézzük, hogy a főoldalon az események száma a megadott értékek közé esik-e.'
     elem = '/html/body/div[1]/div[4]/div[1]/div/div/section/p[2]/a/span[1]'
     minimum = 7000
-    maximum = 12000
+    maximum = 14000
     lista, hibalista = \
         kiemelt_ajanlat_cs.megnezprogramjegydb(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'jegyszam', 13, elem,
                                                minimum,
