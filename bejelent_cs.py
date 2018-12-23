@@ -128,7 +128,7 @@ def bejelent_v2(driver, varbongeszo, varido, varurl, varteszteset_neve, varteszt
         return visszaad2, hibalista
 
 def bejelent_v3(driver, varbongeszo, varido, varurl, varteszteset_neve, varteszteset_leiras, varteszteset_kepek,
-                   varslaido, varlogin, varjelszo, varnev, varkepet_keszit=True, kepek_path='c:/kepek/kepek/'):
+                   varslaido, varlogin, varjelszo, varnev, varkepet_keszit=True, kepek_path='c:/kepek/kepek/', varcookief=True):
     """
     A kezdés időpont mérése máshol van.
 
@@ -175,8 +175,8 @@ def bejelent_v3(driver, varbongeszo, varido, varurl, varteszteset_neve, varteszt
         # maximumra állítjuk a képernyőt
         driver.maximize_window()
         # meghívjuk a kapott url-t.
-        driver.get(varurl)
         kezdet2 = datetime.datetime.now()
+        driver.get(varurl)
         # Megnézzük, hogy kell-e plusz várakozni.
         if varido > 0:
             # Növeljük a várkozási számot.
@@ -187,6 +187,11 @@ def bejelent_v3(driver, varbongeszo, varido, varurl, varteszteset_neve, varteszt
         if varkepet_keszit:
             varkepsorszama = varkepsorszama + 1
             seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepsorszama, True)
+        if varcookief:
+            try:
+                seged_cs.cookiemegnyom(driver, True)
+            except:
+                print('nincs cooki')
         elm = driver.find_elements_by_link_text("Bejelentkezés")
         elm[0].click()
         driver.find_element_by_id('email').send_keys(varlogin)

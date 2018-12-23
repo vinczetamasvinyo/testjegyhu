@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4813ff76-c023-4a9d-a39a-2d6733dd5c96" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/hirlevel.py" beforeDir="false" afterPath="$PROJECT_DIR$/hirlevel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bejelent_cs.py" beforeDir="false" afterPath="$PROJECT_DIR$/bejelent_cs.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,32 +30,32 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1251" />
+          <entry key="py" value="1363" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1251" />
+          <entry key="Python" value="1363" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hirlevel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="429" selection-start-line="429" selection-end-line="429" />
+            <state relative-caret-position="99">
+              <caret line="393" column="4" selection-start-line="393" selection-start-column="4" selection-end-line="393" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bejelent_cs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="291">
+              <caret line="591" column="23" lean-forward="true" selection-start-line="591" selection-start-column="23" selection-end-line="591" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -124,8 +124,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ajandekutalvany_cs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="2054" column="7" lean-forward="true" selection-start-line="2054" selection-start-column="7" selection-end-line="2054" selection-end-column="7" />
+            <state relative-caret-position="176">
+              <caret line="2036" column="54" lean-forward="true" selection-start-line="2036" selection-start-column="54" selection-end-line="2036" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -156,8 +156,10 @@
       <find>file.read</find>
       <find>css</find>
       <find>Ajándékutalvány Télapó kép megnézése</find>
-      <find>Bejelentkezés</find>
       <find>main</find>
+      <find>Bejelentkezés</find>
+      <find>filelokhelye</find>
+      <find>v3</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -222,7 +224,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.hirlevel">
+  <component name="RunManager" selected="Python.bejelent_cs">
     <configuration name="ajandekutalvany_cs" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="test_jegyhu" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -236,6 +238,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ajandekutalvany_cs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bejelent_cs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="test_jegyhu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bejelent_cs.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -290,9 +313,11 @@
       <item itemvalue="Python.hirlevel" />
       <item itemvalue="Python.kiemelt_ajanlat_cs" />
       <item itemvalue="Python.ajandekutalvany_cs" />
+      <item itemvalue="Python.bejelent_cs" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bejelent_cs" />
         <item itemvalue="Python.hirlevel" />
         <item itemvalue="Python.ajandekutalvany_cs" />
         <item itemvalue="Python.kiemelt_ajanlat_cs" />
@@ -334,11 +359,11 @@
       <window_info anchor="bottom" id="Event Log" sideWeight="0.5007949" side_tool="true" weight="0.31850535" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920508" weight="0.31850535" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49920508" visible="true" weight="0.31850535" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31494662" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.3291815" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3291815" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -359,11 +384,6 @@
           <url>file://$PROJECT_DIR$/ajandekutalvany_cs.py</url>
           <line>2056</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/hirlevel.py</url>
-          <line>426</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/bejelent_cs.py</url>
@@ -468,24 +488,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hirlevel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="393" column="4" selection-start-line="393" selection-start-column="4" selection-end-line="393" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ajandekutalvany_cs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="2054" column="7" lean-forward="true" selection-start-line="2054" selection-start-column="7" selection-end-line="2054" selection-end-column="7" />
+        <state relative-caret-position="176">
+          <caret line="2036" column="54" lean-forward="true" selection-start-line="2036" selection-start-column="54" selection-end-line="2036" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bejelent_cs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hirlevel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="429" selection-start-line="429" selection-end-line="429" />
+        <state relative-caret-position="291">
+          <caret line="591" column="23" lean-forward="true" selection-start-line="591" selection-start-column="23" selection-end-line="591" selection-end-column="23" />
         </state>
       </provider>
     </entry>
