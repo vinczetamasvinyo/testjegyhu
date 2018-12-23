@@ -414,7 +414,6 @@ if __name__ == "__main__":
     file.writelines(
         "Teszteset neve;Teszteset leírása;Hely_URL;Eredmény;Bongeszo;Kezdes;Veged;Osszes_futasi_ido;Varakozas_ido;Tiszta_futasi_ido;SLA_ido;Kepek_helye\n")
 
-
     '''     
     *****************************************************************************************
     Hírlevél checkbox
@@ -1145,6 +1144,72 @@ if __name__ == "__main__":
     szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)
     emailszoveg = emailszoveg + szoveg2
     file.writelines(csv_keszito(teljes_lista))
+    #TODO ide be kell tenni az időpont nézést
+    '''     
+    *****************************************************************************************
+    Karácsonyi utalványok megnézése
+    *****************************************************************************************    
+    '''
+    ido = datetime.datetime.now()
+    if ido.month > 5:
+        ev1 = ido.year
+        ev2 = ido.year + 1
+    else:
+        ev1 = ido.year - 1
+        ev2 = ido.year
+    if datetime.date(ev1, 11, 5) < datetime.date(ido.year, ido.month, ido.day) < datetime.date(ev2, 2, 5):
+        """
+        Hóember kép megnézése
+        """
+        chrome = bongeszo.chrome_inditasa()
+        teszt1 = 'Ajándékutalvány Hóember kép megnézése'
+        teszt2 = 'Teszt során azt nézzük, hogy az ajándékutalvány oldalon a hóember kép megjelenik-e'
+        kepurl = 'design/img/gift_cards/hoember_new.jpg'
+        altszoveg = 'Hóember'
+        lista, hibalista = \
+            ajandekutalvany_cs.ajandekutalvanykep2(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'ajandekkep_hoemebr',
+                                                   sla_ajandekutalvany, kepurl, altszoveg)
+        chrome.close()
+        tesztesetek = seged_cs.lista_mod(tesztesetek, lista[3])
+        teljes_lista = lista + hibalista
+        szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)
+        emailszoveg = emailszoveg + szoveg2
+        file.writelines(csv_keszito(teljes_lista))
+        """
+        Díszíek képek megnézése
+        """
+        chrome = bongeszo.chrome_inditasa()
+        teszt1 = 'Ajándékutalvány Hóember kép megnézése'
+        teszt2 = 'Teszt során azt nézzük, hogy az ajándékutalvány oldalon a hóember kép megjelenik-e'
+        kepurl = "design/img/gift_cards/diszek_new.jpg"
+        altszoveg = 'Díszek'
+        lista, hibalista = \
+            ajandekutalvany_cs.ajandekutalvanykep2(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'ajandekkepek_diszek',
+                                                   sla_ajandekutalvany, kepurl, altszoveg)
+        chrome.close()
+        tesztesetek = seged_cs.lista_mod(tesztesetek, lista[3])
+        teljes_lista = lista + hibalista
+        szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)
+        emailszoveg = emailszoveg + szoveg2
+        file.writelines(csv_keszito(teljes_lista))
+        """
+        Télapó megnézése
+        """
+        chrome = bongeszo.chrome_inditasa()
+        teszt1 = 'Ajándékutalvány Télapó kép megnézése'
+        teszt2 = 'Teszt során azt nézzük, hogy az ajándékutalvány oldalon a Télapó kép megjelenik-e'
+        kepurl = "design/img/gift_cards/telapo_new.jpg"
+        altszoveg = 'Télapó'
+        lista, hibalista = \
+            ajandekutalvany_cs.ajandekutalvanykep2(chrome, 'chrome', 0, kornyezet, teszt1, teszt2,
+                                                   'ajandekkepek_telapo',
+                                                   sla_ajandekutalvany, kepurl, altszoveg)
+        chrome.close()
+        tesztesetek = seged_cs.lista_mod(tesztesetek, lista[3])
+        teljes_lista = lista + hibalista
+        szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)
+        emailszoveg = emailszoveg + szoveg2
+        file.writelines(csv_keszito(teljes_lista))
 
     '''     
     *****************************************************************************************
@@ -1157,14 +1222,14 @@ if __name__ == "__main__":
     kepurl = 'design/img/gift_cards/boldog_nevnapot_new.jpg'
     altszoveg = 'Boldog névnapot!'
     lista, hibalista = \
-        ajandekutalvany_cs.ajandekutalvanykep(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'ajandekkep3',
-                                              sla_ajandekutalvany, 2,
-                                              kepurl, altszoveg)
+        ajandekutalvany_cs.ajandekutalvanykep2(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'ajandekkep3',
+                                              sla_ajandekutalvany, kepurl, altszoveg)
     tesztesetek = seged_cs.lista_mod(tesztesetek, lista[3])
     teljes_lista = lista + hibalista
     szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)
     emailszoveg = emailszoveg + szoveg2
     file.writelines(csv_keszito(teljes_lista))
+    chrome.close()
     '''     
     *****************************************************************************************
     Ajándékutalvány kép2 megnézése
@@ -1177,8 +1242,9 @@ if __name__ == "__main__":
     kepurl = 'design/img/gift_cards/boldog_szuletesnapot_new.jpg'
     altszoveg = 'Boldog születésnapot!'
     lista, hibalista = \
-        ajandekutalvany_cs.ajandekutalvanykep(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'ajandekkep2', 16, 1,
+        ajandekutalvany_cs.ajandekutalvanykep2(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'ajandekkep2', 16,
                                               kepurl, altszoveg)
+    chrome.close()
     tesztesetek = seged_cs.lista_mod(tesztesetek, lista[3])
     teljes_lista = lista + hibalista
     szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)
@@ -1197,8 +1263,9 @@ if __name__ == "__main__":
     kepurl = 'design/img/gift_cards/jegyhu_ajandekutalvany_new.jpg'
     altszoveg = 'Jegy.hu ajándékutalvány'
     lista, hibalista = \
-        ajandekutalvany_cs.ajandekutalvanykep(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'ajandekkep1', 16, 0,
+        ajandekutalvany_cs.ajandekutalvanykep2(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'ajandekkep1', 16,
                                               kepurl, altszoveg)
+    chrome.close()
     tesztesetek = seged_cs.lista_mod(tesztesetek, lista[3])
     teljes_lista = lista + hibalista
     szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)
@@ -2495,10 +2562,10 @@ if __name__ == "__main__":
     # firefox = bongeszo.firefox_inditasa()
     teszt1 = 'Bejelentkezés'
     teszt2 = 'Teszt során azt nézzük, hogy be tudunk-e jelentkezni.'
-    file = open(filelokhelye+'bejelentkezesjegyhusikeres.txt')
-    emailcim = file.readline()
-    jelszo = file.readline()
-    file.close()
+    file2 = open(filelokhelye+'bejelentkezesjegyhusikeres.txt')
+    emailcim = file2.readline()
+    jelszo = file2.readline()
+    file2.close()
     lista, hibalista = \
         bejelent_cs.bejelent_v2(chrome, 'Chrome', 0, kornyezet, teszt1, teszt2, 'bejelentkezes', 20,
                                 emailcim,
@@ -2517,11 +2584,11 @@ if __name__ == "__main__":
     # firefox = bongeszo.firefox_inditasa()
     teszt1 = 'Bejelentkezés rossz jelszó'
     teszt2 = 'Teszt során azt nézzük, hogyha rossz jelszót adunk meg és minden jól működik'
-    file = open(filelokhelye+'bejelentkezesjegyhusikertelen.txt')
-    emailcim = file.readline()
-    jelszo = file.readline()
-    nev = file.readline()
-    file.close()
+    file2 = open(filelokhelye+'bejelentkezesjegyhusikertelen.txt')
+    emailcim = file2.readline()
+    jelszo = file2.readline()
+    nev = file2.readline()
+    file2.close()
     lista, hibalista = \
         bejelent_cs.bejelentrosszjelszo(chrome, 'Chrome', 0, 'https://www.jegy.hu/', teszt1, teszt2, 'bejelentkezes',
                                         20,
@@ -2540,11 +2607,11 @@ if __name__ == "__main__":
     # firefox = bongeszo.firefox_inditasa()
     teszt1 = 'Bejelentkezés nem létező login'
     teszt2 = 'Teszt során azt nézzük, hogyha nem létező loginnal próbálunk meg belépni.'
-    file = open(filelokhelye+'bejelentkezesjegyhunemletezo.txt')
-    emailcim = file.readline()
-    jelszo = file.readline()
-    nev = file.readline()
-    file.close()
+    file2 = open(filelokhelye+'bejelentkezesjegyhunemletezo.txt')
+    emailcim = file2.readline()
+    jelszo = file2.readline()
+    nev = file2.readline()
+    file2.close()
     lista, hibalista = \
         bejelent_cs.bejelentnemletezologin(chrome, 'Chrome', 0, kornyezet, teszt1, teszt2, 'bejelentkezes',
                                            20, emailcim, jelszo, nev)
@@ -3068,10 +3135,10 @@ if __name__ == "__main__":
     file.writelines(csv_keszito(teljes_lista))
     szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)
     emailszoveg = emailszoveg + szoveg2
-    file = open(filelokhelye+'emailkuldes_login.txt')
-    emailcim = file.readline()
-    jelszo = file.readline()
-    file.close()
+    file2 = open(filelokhelye+'emailkuldes_login.txt')
+    emailcim = file2.readline()
+    jelszo = file2.readline()
+    file2.close()
     gyakorlat.send_email2(emailcim, jelszo,
                           emaillista, str(tesztesetek[0]) + '/' + str(tesztesetek[1]) + '/' + str(tesztesetek[2]),
                           seged_cs.emailosszerak(tesztesetek, emailszoveg))
