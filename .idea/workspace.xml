@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4813ff76-c023-4a9d-a39a-2d6733dd5c96" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/kiemelt_ajanlat_cs.py" beforeDir="false" afterPath="$PROJECT_DIR$/kiemelt_ajanlat_cs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajandekutalvany_cs.py" beforeDir="false" afterPath="$PROJECT_DIR$/ajandekutalvany_cs.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,22 +20,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="15" />
+          <entry key="py" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="15" />
+          <entry key="Python" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="319" />
+          <entry key="py" value="829" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="319" />
+          <entry key="Python" value="829" />
         </counts>
       </usages-collector>
     </session>
@@ -45,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hirlevel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="536" column="34" selection-start-line="531" selection-start-column="4" selection-end-line="536" selection-end-column="106" />
+            <state relative-caret-position="286">
+              <caret line="1161" column="64" lean-forward="true" selection-start-line="1153" selection-start-column="4" selection-end-line="1161" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -54,26 +54,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hirlevel_cs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
+            <state relative-caret-position="245">
               <caret line="1428" selection-start-line="1428" selection-end-line="1428" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kereso_cs.py">
+        <entry file="file://$PROJECT_DIR$/kiemelt_ajanlat_cs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="827" column="35" selection-start-line="827" selection-start-column="35" selection-end-line="827" selection-end-column="35" />
+            <state relative-caret-position="254">
+              <caret line="1538" column="30" selection-start-line="1538" selection-start-column="30" selection-end-line="1538" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kiemelt_ajanlat_cs.py">
+        <entry file="file://$PROJECT_DIR$/ajandekutalvany_cs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="1549" column="14" lean-forward="true" selection-start-line="1549" selection-start-column="14" selection-end-line="1549" selection-end-column="14" />
+            <state relative-caret-position="200">
+              <caret line="2186" lean-forward="true" selection-start-line="2186" selection-end-line="2186" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cookie.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="7" selection-start-column="4" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -112,15 +130,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gyakorlat.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="234" column="14" selection-start-line="234" selection-start-column="14" selection-end-line="234" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -129,6 +138,14 @@
       <find>Főoldalon események számának a megnézése</find>
       <find>Ajándlók darabszáma</find>
       <find>ajanlo</find>
+      <find>css</find>
+      <find>jegyno</find>
+      <find>kepro</find>
+      <find>Ajándékutalvány kép3 megnézése</find>
+      <find>kepr</find>
+      <find>ajandekutalvanykep2</find>
+      <find>coo</find>
+      <find>cook</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ajandekutalvany_cs.py" />
         <option value="$PROJECT_DIR$/bejelent_cs.py" />
         <option value="$PROJECT_DIR$/bongeszo.py" />
         <option value="$PROJECT_DIR$/gyakorlat.py" />
@@ -148,6 +164,7 @@
         <option value="$PROJECT_DIR$/top10_select.py" />
         <option value="$PROJECT_DIR$/hirlevel.py" />
         <option value="$PROJECT_DIR$/kiemelt_ajanlat_cs.py" />
+        <option value="$PROJECT_DIR$/ajandekutalvany_cs.py" />
       </list>
     </option>
   </component>
@@ -179,6 +196,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -192,7 +210,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.kiemelt_ajanlat_cs">
+  <component name="RunManager" selected="Python.ajandekutalvany_cs">
+    <configuration name="ajandekutalvany_cs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="test_jegyhu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ajandekutalvany_cs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="hirlevel" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="test_jegyhu" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -238,9 +277,11 @@
     <list>
       <item itemvalue="Python.hirlevel" />
       <item itemvalue="Python.kiemelt_ajanlat_cs" />
+      <item itemvalue="Python.ajandekutalvany_cs" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ajandekutalvany_cs" />
         <item itemvalue="Python.kiemelt_ajanlat_cs" />
         <item itemvalue="Python.hirlevel" />
       </list>
@@ -264,7 +305,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24960254" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16772655" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" />
@@ -272,7 +313,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3291815" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24377224" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31494662" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -293,17 +334,15 @@
           <line>1453</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ajandekutalvany_cs.py</url>
+          <line>2056</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ajandekutalvany_cs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="2032" selection-start-line="2032" selection-end-line="2032" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bejelent_cs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -316,11 +355,6 @@
         <state relative-caret-position="183">
           <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cookie.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9299" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/file_muveletek.py">
@@ -368,20 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hirlevel_cs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="1428" selection-start-line="1428" selection-end-line="1428" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hirlevel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="536" column="34" selection-start-line="531" selection-start-column="4" selection-end-line="536" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/python/Lib/site-packages/selenium/webdriver/remote/errorhandler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
@@ -391,8 +411,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kiemelt_ajanlat_cs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="1549" column="14" lean-forward="true" selection-start-line="1549" selection-start-column="14" selection-end-line="1549" selection-end-column="14" />
+        <state relative-caret-position="254">
+          <caret line="1538" column="30" selection-start-line="1538" selection-start-column="30" selection-end-line="1538" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hirlevel_cs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="1428" selection-start-line="1428" selection-end-line="1428" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cookie.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hirlevel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="1161" column="64" lean-forward="true" selection-start-line="1153" selection-start-column="4" selection-end-line="1161" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajandekutalvany_cs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="2186" lean-forward="true" selection-start-line="2186" selection-end-line="2186" />
         </state>
       </provider>
     </entry>

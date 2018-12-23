@@ -664,7 +664,7 @@ def ajandekutalvanykeprol2(driver, varbongeszo, varido, varurl, varteszteset_nev
             osszeskep = driver.find_elements_by_class_name('mTSThumb')
             mennikell = True
             i = 0
-            while (mennikell == True) and (i< len(osszeskep)):
+            while (mennikell == True) and (i < len(osszeskep)):
                 if osszeskep[i].get_attribute('alt') == varkepkattint:
                     mennikell = False
                 else:
@@ -2028,5 +2028,158 @@ def ajandekutalvanyvissza(driver, varbongeszo, varido, varurl, varteszteset_neve
         visszaad = seged_cs.lista_osszerakv2(varteszteset_neve, varteszteset_leiras, varurl, eredmeny, varbongeszo,
                                              kezdet2, vege2, varido, tiszta_futasi_ido, varslaido, kepek_helye)
         driver.close()
+        print(varteszteset_neve + ' lefutott')
+    return visszaad, hibalista
+
+
+def ajandekutalvanykep2(driver, varbongeszo, varido, varurl, varteszteset_neve, varteszteset_leiras,
+                          varteszteset_kepek, varslaido, varkepurl, varaltszoveg, varkepet_keszit=True,
+                          kepek_path='c:/kepek/kepek/', varcookief=True):
+    """
+    Megnézi, hogy az ajándékutalvány oldalon megjelenik-e az adott kép.
+
+    :param driver:
+    :param varbongeszo:
+    :param varido:
+    :param varurl:
+    :param varteszteset_neve:
+    :param varteszteset_leiras:
+    :param varteszteset_kepek:
+    :param varslaido:
+    :param varkepurl: Mi a kép url-je.
+    :param varaltszoveg: Milyen szövegnek kellene megjelenni a képnél.
+    :param varkepet_keszit:
+    :param kepek_path:
+    :param varcookief:
+    :return:
+    """
+    try:
+        from selenium import webdriver
+        import time
+        from selenium.webdriver import ActionChains
+        import time
+        import os
+        import datetime
+        import seged_cs
+        import file_muveletek
+        from selenium.common.exceptions import NoSuchElementException
+        print(varteszteset_neve + ' elindult')
+        varidodb = 0
+        # Teszteset sikerességét ezzel a logikai változóval viszgáljuk. True-ra állítjuk.
+        teszteset_sikeres = True
+        # Beállítjuk, hogy mikor indult a teszteset
+        kezdet2 = datetime.datetime.now()
+        # A teszteset során ha hiba történik, akkor azt a hibalista-ban adjuk vissza
+        hibalista = []
+        varkepindex = 0
+        if varkepet_keszit:
+            kepek_helye = file_muveletek.kepekhez_konyvtarat(varteszteset_kepek, kepek_path)
+            # képindexét 0-ra állítjuk
+            varkepindex = 0
+        else:
+            kepek_helye = ''
+        # driver = webdriver.Chrome('C:\python\selenium\webdriver\chrome5\chromedriver.exe')
+        # driver.maximize_window()
+        driver.get(varurl)
+        if varido > 0:
+            varidodb = varidodb + 1
+            time.sleep(varido)
+        # Megnézzük, hogy kell a képet készíteni. Ha kell akkor csinálunk.
+        if varkepet_keszit:
+            varkepindex = varkepindex + 1
+            seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepindex, True)
+        if varcookief:
+            try:
+                seged_cs.cookiemegnyom(driver, True)
+            except:
+                print('nincs cooki')
+        try:
+            elem = driver.find_element_by_xpath('/html/body/div[1]/section/div/div[1]/h4/span/a')
+        except NoSuchElementException:
+            teszteset_sikeres = False
+            hibalista.append('Ajándékkártya link nem található')
+        if teszteset_sikeres:
+            pozicio_szoveg = "window.scrollTo(0," + str(elem.location['y'] - 100) + ");"
+            driver.execute_script(pozicio_szoveg)
+            if varido > 0:
+                varidodb = varidodb + 1
+                time.sleep(varido)
+            if varkepet_keszit:
+                varkepindex = varkepindex + 1
+                seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepindex, True)
+            try:
+                elem.click()
+            except:
+                teszteset_sikeres = False
+                hibalista.append('Az ajándékkártyára linkre nem sikerült rákattintani.')
+            try:
+                osszeskep = driver.find_elements_by_class_name('mTSThumb')
+            except NoSuchElementException:
+                teszteset_sikeres = False
+                hibalista.append('Képek nem találhatóak az oldalon')
+            if len(osszeskep) == 0:
+                teszteset_sikeres = False
+                hibalista.append('Kép nem található az oldalon')
+            if teszteset_sikeres:
+                pozicio_szoveg = "window.scrollTo(0," + str(osszeskep[0].location['y'] - 100) + ");"
+                driver.execute_script(pozicio_szoveg)
+                if varkepet_keszit:
+                    varkepindex = varkepindex + 1
+                    seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepindex, True)
+                mennikell = True
+                i = 0
+                while (mennikell == True) and (i < len(osszeskep)):
+                    if osszeskep[i].get_attribute('alt') == varaltszoveg:
+                        mennikell = False
+                    else:
+                        i = i + 1
+                if mennikell == True:
+                    teszteset_sikeres = False
+                    hibalista.append('A megadott kép nem található')
+                if teszteset_sikeres:
+                    kellkattintani = (i + 1) - 3
+                    if kellkattintani > 0:
+                        jobbragomb = driver.find_element_by_id('mTS_1_buttonRight')
+                        pozicio_szoveg = "window.scrollTo(0," + str(jobbragomb.location['y'] - 200) + ");"
+                        driver.execute_script(pozicio_szoveg)
+                        time.sleep(1)
+                        for kattint in range(0, kellkattintani):
+                            jobbragomb.click()
+                            time.sleep(1)
+
+                megjelenik2 = driver.execute_script("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", osszeskep[i])
+                if megjelenik2 == False:
+                    teszteset_sikeres = False
+                    hibalista.append('A kép nem jelenik meg.')
+                if osszeskep[i].get_attribute('src') != (varurl+varkepurl):
+                    print(osszeskep[i].get_attribute('src'))
+                    print(varurl+varkepurl)
+                    teszteset_sikeres = False
+                    hibalista.append('A képnek nem jó az URL-je. Ez jelent meg:'
+                                     + osszeskep[i].get_attribute('src') + ', de ennek kellett volna:'
+                                     + varurl+varkepurl)
+                # print('kép megjelenik-e: ', megjelenik2)
+                # print(str(kepeklistaja[varkepsorszam].size['height']))
+                #print(str(kepeklistaja[varkepsorszam].size['width']))
+    except:
+        teszteset_sikeres = False
+        hibalista.append('Egyéb technikai hiba volt')
+        if varkepet_keszit:
+            varkepindex = varkepindex + 1
+            seged_cs.kepet_keszit(driver, varteszteset_kepek + 'hiba', varkepindex, True)
+    finally:
+        vege2 = datetime.datetime.now()
+        masodperc = varidodb * varido
+        tisztavege = vege2 - datetime.timedelta(seconds=masodperc)
+        tiszta_futasi_ido = tisztavege - kezdet2
+        if tiszta_futasi_ido.total_seconds() > varslaido:
+            teszteset_sikeres = False
+            hibalista.append('Túlléptük az SLA időt')
+        if teszteset_sikeres:
+            eredmeny = 'Sikeres'
+        else:
+            eredmeny = 'Sikertelen'
+        visszaad = seged_cs.lista_osszerakv2(varteszteset_neve, varteszteset_leiras, varurl, eredmeny, varbongeszo,
+                                             kezdet2, vege2, varido, tiszta_futasi_ido, varslaido, kepek_helye)
         print(varteszteset_neve + ' lefutott')
     return visszaad, hibalista
