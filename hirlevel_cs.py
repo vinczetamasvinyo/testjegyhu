@@ -1352,7 +1352,6 @@ def hirlevel_checkbox(driver, varbongeszo, varido, varurl, varteszteset_neve, va
         # driver = webdriver.Chrome('C:\python\selenium\webdriver\chrome5\chromedriver.exe')
         # driver.maximize_window()
         driver.get(varurl)
-        time.sleep(4)
         if varido > 0:
             varidodb = varidodb + 1
             time.sleep(varido)
@@ -1361,21 +1360,10 @@ def hirlevel_checkbox(driver, varbongeszo, varido, varurl, varteszteset_neve, va
             varkepindex = varkepindex + 1
             seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepindex, True)
         if varcookief:
-            ceredmeny, clista = cookiemegnyom(driver)
-            if ceredmeny == False:
-                teszteset_sikeres = False
-                hibalista = hibalista + clista
-
-            """
             try:
-                cookie = driver.find_element_by_xpath('//*[@id="cookieWrapper"]/p/a[2]')
-                time.sleep(3)
-                cookie.click()
-                varlinkdb = 1
+                seged_cs.cookiemegnyom(driver, True)
             except:
                 print('nincs cooki')
-                varlinkdb = 1
-            """
         try:
             hirlevelikon = driver.find_element_by_id('newsletterLink')
         except NoSuchElementException:
@@ -1423,6 +1411,5 @@ def hirlevel_checkbox(driver, varbongeszo, varido, varurl, varteszteset_neve, va
             eredmeny = 'Sikertelen'
         visszaad = seged_cs.lista_osszerakv2(varteszteset_neve, varteszteset_leiras, varurl, eredmeny, varbongeszo,
                                              kezdet2, vege2, varido, tiszta_futasi_ido, varslaido, kepek_helye)
-        driver.close()
         print(varteszteset_neve + ' lefutott')
     return visszaad, hibalista
