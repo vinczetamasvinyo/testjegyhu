@@ -426,6 +426,7 @@ if __name__ == "__main__":
     kep = 'hirlevel_chekcbox'
     lista, hibalista = \
         hirlevel_cs.hirlevel_checkbox(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'hirlevelcheckbox', 20)
+    chrome.close()
     tesztesetek = seged_cs.lista_mod(tesztesetek, lista[3])
     teljes_lista = lista + hibalista
     # print(teljes_lista)
@@ -2567,9 +2568,10 @@ if __name__ == "__main__":
     jelszo = file2.readline()
     file2.close()
     lista, hibalista = \
-        bejelent_cs.bejelent_v2(chrome, 'Chrome', 0, kornyezet, teszt1, teszt2, 'bejelentkezes', 20,
+        bejelent_cs.bejelent_v3(chrome, 'Chrome', 0, kornyezet, teszt1, teszt2, 'bejelentkezes', 20,
                                 emailcim,
                                 jelszo, 'Vincze Tamás')
+    chrome.close()
     tesztesetek = seged_cs.lista_mod(tesztesetek, lista[3])
     teljes_lista = lista + hibalista
     szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)
@@ -2585,14 +2587,14 @@ if __name__ == "__main__":
     teszt1 = 'Bejelentkezés rossz jelszó'
     teszt2 = 'Teszt során azt nézzük, hogyha rossz jelszót adunk meg és minden jól működik'
     file2 = open(filelokhelye+'bejelentkezesjegyhusikertelen.txt')
-    emailcim = file2.readline()
-    jelszo = file2.readline()
+    emailcim = file2.readline().rstrip()
+    jelszo = file2.readline().rstrip()
     nev = file2.readline()
     file2.close()
     lista, hibalista = \
-        bejelent_cs.bejelentrosszjelszo(chrome, 'Chrome', 0, 'https://www.jegy.hu/', teszt1, teszt2, 'bejelentkezes',
-                                        20,
-                                        emailcim, jelszo, nev)
+        bejelent_cs.bejelentrosszjelszo(chrome, 'Chrome', 0, kornyezet, teszt1, teszt2, 'bejelentkezes',
+                                        20, emailcim, jelszo, nev)
+    chrome.close()
     tesztesetek = seged_cs.lista_mod(tesztesetek, lista[3])
     teljes_lista = lista + hibalista
     szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)
@@ -2608,13 +2610,14 @@ if __name__ == "__main__":
     teszt1 = 'Bejelentkezés nem létező login'
     teszt2 = 'Teszt során azt nézzük, hogyha nem létező loginnal próbálunk meg belépni.'
     file2 = open(filelokhelye+'bejelentkezesjegyhunemletezo.txt')
-    emailcim = file2.readline()
-    jelszo = file2.readline()
+    emailcim = file2.readline().rstrip()
+    jelszo = file2.readline().rstrip()
     nev = file2.readline()
     file2.close()
     lista, hibalista = \
         bejelent_cs.bejelentnemletezologin(chrome, 'Chrome', 0, kornyezet, teszt1, teszt2, 'bejelentkezes',
                                            20, emailcim, jelszo, nev)
+    chrome.close()
     tesztesetek = seged_cs.lista_mod(tesztesetek, lista[3])
     teljes_lista = lista + hibalista
     szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)
@@ -2647,7 +2650,7 @@ if __name__ == "__main__":
     teszt1 = 'Bérletek'
     teszt2 = 'Teszt során azt nézzük, hogy a Bérletek link megjelenik-e.'
     lista, hibalista = \
-        kiemelt_ajanlat_cs.berletek(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'berletek', 13)
+        kiemelt_ajanlat_cs.berletek(chrome, 'chrome', 0, kornyezet, teszt1, teszt2, 'berletek', 22)
     tesztesetek = seged_cs.lista_mod(tesztesetek, lista[3])
     teljes_lista = lista + hibalista
     szoveg2 = gyakorlat.tabalazat_sora(teljes_lista)

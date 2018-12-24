@@ -260,7 +260,7 @@ def bejelent_v3(driver, varbongeszo, varido, varurl, varteszteset_neve, varteszt
         visszaad2 = seged_cs.lista_osszerakv2(varteszteset_neve, varteszteset_leiras, varurl, eredmeny, varbongeszo,
                                             kezdet2,vege2,varido,id,varslaido,kepek_helye)
 
-        driver.close()
+        # driver.close()
         print(varteszteset_neve + ' lefutott')
         return visszaad2, hibalista
 
