@@ -266,9 +266,9 @@ def bejelent_v3(driver, varbongeszo, varido, varurl, varteszteset_neve, varteszt
 
 
 def bejelentrosszjelszo(driver, varbongeszo, varido, varurl, varteszteset_neve, varteszteset_leiras, varteszteset_kepek,
-                   varslaido, varlogin, varjelszo, varkepet_keszit=True, kepek_path='c:/kepek/kepek/'):
+                   varslaido, varlogin, varjelszo, varkepet_keszit=True, kepek_path='c:/kepek/kepek/', varcookief=True):
     """
-    A eljárás a sikeres bejelentkezést teszteli. A teszteset, akkro ad vissza sikeres értékes ha a megadott adatokkal
+    A eljárás a sikeres bejelentkezést teszteli, rossz jelszóval. A teszteset, akkro ad vissza sikeres értékes ha a megadott adatokkal
     sikerült bejelentkezni és az SLA időn belül maradt a futási idő.
 
     :param driver: Az adott böngészőnek a drivere.
@@ -310,10 +310,13 @@ def bejelentrosszjelszo(driver, varbongeszo, varido, varurl, varteszteset_neve, 
             # A képek sorszámát 0-ra állítjuk. Ezzel számoljuk, hogy hanyadik képnél tartunk.
             varkepsorszama = 0
             kepek_helye = file_muveletek.kepekhez_konyvtarat(varteszteset_kepek, kepek_path)
-        # maximumra állítjuk a képernyőt
-        #driver.maximize_window()
         # meghívjuk a kapott url-t.
         driver.get(varurl)
+        if varcookief:
+            try:
+                seged_cs.cookiemegnyom(driver, True)
+            except:
+                print('nincs cooki')
         # Megnézzük, hogy kell-e plusz várakozni.
         if varido > 0:
             # Növeljük a várkozási számot.
@@ -325,71 +328,70 @@ def bejelentrosszjelszo(driver, varbongeszo, varido, varurl, varteszteset_neve, 
             varkepsorszama = varkepsorszama + 1
             seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepsorszama, True)
         try:
-            elm = driver.find_elements_by_link_text("Bejelentkezés")
-            elm[0].click()
-            driver.find_element_by_id('email').send_keys(varlogin)
-            if varido > 0:
-                # Növeljük a várkozási számot.
-                varidodb = varidodb + 1
-                # Várakozunk
-                time.sleep(varido)
-            if varkepet_keszit:
-                varkepsorszama = varkepsorszama + 1
-                seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepsorszama, True)
-            driver.find_element_by_id('password1').send_keys(varjelszo)
-            if varido > 0:
-                # Növeljük a várkozási számot.
-                varidodb = varidodb + 1
-                # Várakozunk
-                time.sleep(varido)
-            if varkepet_keszit:
-                varkepsorszama = varkepsorszama + 1
-                seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepsorszama, True)
-            driver.find_element_by_id('submitReg').click()
-            if varido > 0:
-                # Növeljük a várkozási számot.
-                varidodb = varidodb + 1
-                # Várakozunk
-                time.sleep(varido)
-            time.sleep(3)
-            if varkepet_keszit:
-                varkepsorszama = varkepsorszama + 1
-                seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepsorszama, True)
-            if driver.current_url != varurl + 'registration/doLogin':
-                teszteset_sikeres = False
-                hibalista.append('A hibaoldal url-je nem stímmel. Ez jelent meg: ' + driver.current_url)
-            try:
-                elem = driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/h1')
-                if elem.text != 'Sikertelen belépés':
-                    teszteset_sikeres = False
-                    hibalista.append('A Sikertelen belépés szövege rossz')
-            except NoSuchElementException:
-                teszteset_sikeres = False
-                hibalista.append('A Sikertelen belépés szöveg nem jelent meg.')
-            try:
-                # elem = driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div/div/div/p')
-                elem = driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div/div/div/p[2]')
-                # print(elem.text)
-                szoveg ='''A megadott belépési adatok(E-mail cím és/vagy jelszó) nem megfelelőek. Kérjük, ellenőrizze az e-mail címet és a jelszót! Amennyiben nem emlékszik a jelszóra, akkor javasoljuk az új jelszó megadását.
-
-Új jelszót adok meg'''
-                if elem.text != szoveg:
-                    #output_list = [li for li in list(difflib.ndiff(a, b)) if li[0] != ' ']
-                    #print(output_list)
-                    teszteset_sikeres = False
-                    hibalista.append('Hibaszöveg nem egyezik meg.')
-                    #print('szöveg nem egyezik')
-                    #print(szoveg)
-                try:
-                    elem = driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div/div/div/a')
-                except NoSuchElementException:
-                    teszteset_sikeres = False
-                    hibalista.append()
-            except NoSuchElementException:
-                teszteset_sikeres = False
+            elm = driver.find_element_by_link_text("Bejelentkezés")
         except NoSuchElementException:
             teszteset_sikeres = False
-            hibalista.append('A bejelentkezés nem található')
+            hibalista.append('A főoldalon a bejelentkezési link nem található')
+        if teszteset_sikeres:
+            elm.click()
+            try:
+                emailmezo = driver.find_element_by_id('email')
+            except NoSuchElementException:
+                teszteset_sikeres = False
+                hibalista.append('A bejelentkezésnél az emal mező nem található')
+            if teszteset_sikeres:
+                emailmezo.send_keys(varlogin)
+                if varkepet_keszit:
+                    varkepsorszama = varkepsorszama + 1
+                    seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepsorszama, True)
+                try:
+                    jelszomezo = driver.find_element_by_id('password1')
+                except NoSuchElementException:
+                    teszteset_sikeres = False
+                    hibalista.append('Az bejelentkezési oldalon a jelszó mező nem található')
+                if teszteset_sikeres:
+                    jelszomezo.send_keys(varjelszo)
+                    if varkepet_keszit:
+                        varkepsorszama = varkepsorszama + 1
+                        seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepsorszama, True)
+                    try:
+                        belepesgomb = driver.find_element_by_id('submitReg')
+                    except NoSuchElementException:
+                        teszteset_sikeres = False
+                        hibalista.append('A belépés gomb nem található')
+                    if teszteset_sikeres:
+                        belepesgomb.click()
+                        if varkepet_keszit:
+                            varkepsorszama = varkepsorszama + 1
+                            seged_cs.kepet_keszit(driver, varteszteset_kepek, varkepsorszama, True)
+                        if driver.current_url != varurl + 'registration/doLogin':
+                            teszteset_sikeres = False
+                            hibalista.append('A hibaoldal url-je nem stímmel. Ez jelent meg: ' + driver.current_url)
+                        try:
+                            elem = driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/h1')
+                            elemmegjelent = True
+                        except NoSuchElementException:
+                            teszteset_sikeres = False
+                            hibalista.append('A Sikertelen belépés szöveg nem jelent meg.')
+                        if elemmegjelent:
+                            if elem.text != 'Sikertelen belépés':
+                                teszteset_sikeres = False
+                                hibalista.append('A Sikertelen belépés szövege rossz')
+                        try:
+                            hibaszoveg = driver.find_element_by_xpath('/html/body/div[1]/div[4]/div/div/div/div/p[2]')
+                        except NoSuchElementException:
+                            teszteset_sikeres = False
+                            hibalista.append('A hosszú hibaszöveg nem jelent meg')
+                        if teszteset_sikeres:
+                            print(hibaszoveg.text)
+                            szoveg = '''A megadott belépési adatok(E-mail cím és/vagy jelszó) nem megfelelőek. Kérjük, ellenőrizze az e-mail címet és a jelszót! Amennyiben nem emlékszik a jelszóra, akkor javasoljuk az új jelszó megadását.
+
+Új jelszót adok meg'''
+                        if hibaszoveg.text != szoveg:
+                            output_list = [li for li in list(difflib.ndiff(elem.text, szoveg)) if li[0] != ' ']
+                            print(output_list)
+                            teszteset_sikeres = False
+                            hibalista.append('Hibaszöveg nem egyezik meg.')
     except:
         if varkepet_keszit:
             varkepsorszama = varkepsorszama + 1
@@ -401,22 +403,16 @@ def bejelentrosszjelszo(driver, varbongeszo, varido, varurl, varteszteset_neve, 
         masodperc = varidodb * varido
         tisztavege = vege2 - datetime.timedelta(seconds=masodperc)
         id = tisztavege - kezdet2
-        # print(id.min)
-        # print(id.seconds)
         if id.total_seconds() > varslaido:
             teszteset_sikeres = False
             #print('túlléptük az időt')
             hibalista.append('Túlléptük az SLA időt')
-            #print(id.total_seconds())
-        #print(tisztavege - kezdet2)
-        #print(id)
         if teszteset_sikeres:
             eredmeny = 'Sikeres'
         else:
             eredmeny = 'Sikertelen'
         visszaad2 = seged_cs.lista_osszerakv2(varteszteset_neve, varteszteset_leiras, varurl, eredmeny, varbongeszo,
                                             kezdet2,vege2,varido,id,varslaido,kepek_helye)
-        driver.close()
         print(varteszteset_neve + ' lefutott')
         return visszaad2, hibalista
 
