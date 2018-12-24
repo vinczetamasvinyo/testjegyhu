@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4813ff76-c023-4a9d-a39a-2d6733dd5c96" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/bejelent_cs.py" beforeDir="false" afterPath="$PROJECT_DIR$/bejelent_cs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hirlevel.py" beforeDir="false" afterPath="$PROJECT_DIR$/hirlevel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hirlevel_cs.py" beforeDir="false" afterPath="$PROJECT_DIR$/hirlevel_cs.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,32 +30,32 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2441" />
+          <entry key="py" value="2506" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2441" />
+          <entry key="Python" value="2506" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hirlevel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="2654" column="36" lean-forward="true" selection-start-line="2654" selection-start-column="36" selection-end-line="2654" selection-end-column="36" />
+            <state relative-caret-position="225">
+              <caret line="3008" column="46" lean-forward="true" selection-start-line="3008" selection-start-column="46" selection-end-line="3008" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hirlevel_cs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="1408" column="32" lean-forward="true" selection-start-line="1408" selection-start-column="32" selection-end-line="1408" selection-end-column="32" />
+            <state relative-caret-position="156">
+              <caret line="521" selection-start-line="521" selection-end-line="521" />
             </state>
           </provider>
         </entry>
@@ -65,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/bejelent_cs.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
-              <caret line="262" column="10" selection-start-line="262" selection-start-column="10" selection-end-line="262" selection-end-column="10" />
+              <caret line="525" column="35" lean-forward="true" selection-start-line="525" selection-start-column="35" selection-end-line="525" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -135,7 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Ajándlók darabszáma</find>
       <find>ajanlo</find>
       <find>jegyno</find>
       <find>kepro</find>
@@ -162,9 +160,10 @@
       <find>v2</find>
       <find>Hírlevél feliratkozás checkbox megnézése</find>
       <find>bejelent</find>
-      <find>v3</find>
       <find>Bejelentkezés rossz jelszó</find>
       <find>Bérletek</find>
+      <find>v3</find>
+      <find>Hírlevél feliratkozás foglalt felul</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -181,13 +180,13 @@
         <option value="$PROJECT_DIR$/top10_select.py" />
         <option value="$PROJECT_DIR$/kiemelt_ajanlat_cs.py" />
         <option value="$PROJECT_DIR$/ajandekutalvany_cs.py" />
-        <option value="$PROJECT_DIR$/hirlevel_cs.py" />
         <option value="$PROJECT_DIR$/bejelent_cs.py" />
         <option value="$PROJECT_DIR$/hirlevel.py" />
+        <option value="$PROJECT_DIR$/hirlevel_cs.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
     <option name="y" value="-12" />
     <option name="width" value="1944" />
@@ -229,7 +228,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.hirlevel">
+  <component name="RunManager" selected="Python.hirlevel_cs">
     <configuration name="ajandekutalvany_cs" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="test_jegyhu" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -344,8 +343,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.hirlevel" />
         <item itemvalue="Python.hirlevel_cs" />
+        <item itemvalue="Python.hirlevel" />
         <item itemvalue="Python.bejelent_cs" />
         <item itemvalue="Python.tooltipp_cs" />
         <item itemvalue="Python.ajandekutalvany_cs" />
@@ -376,7 +375,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16772655" />
@@ -387,8 +385,8 @@
       <window_info anchor="bottom" id="Event Log" sideWeight="0.5007949" side_tool="true" weight="0.31850535" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49920508" visible="true" weight="0.31850535" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.31494662" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920508" weight="0.31850535" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.31494662" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3291815" />
@@ -425,8 +423,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hirlevel_cs.py</url>
-          <line>1326</line>
+          <line>1329</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hirlevel_cs.py</url>
+          <line>359</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -526,24 +529,24 @@
         <state relative-caret-position="-2589" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hirlevel_cs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="1408" column="32" lean-forward="true" selection-start-line="1408" selection-start-column="32" selection-end-line="1408" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bejelent_cs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
-          <caret line="262" column="10" selection-start-line="262" selection-start-column="10" selection-end-line="262" selection-end-column="10" />
+          <caret line="525" column="35" lean-forward="true" selection-start-line="525" selection-start-column="35" selection-end-line="525" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hirlevel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="2654" column="36" lean-forward="true" selection-start-line="2654" selection-start-column="36" selection-end-line="2654" selection-end-column="36" />
+        <state relative-caret-position="225">
+          <caret line="3008" column="46" lean-forward="true" selection-start-line="3008" selection-start-column="46" selection-end-line="3008" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hirlevel_cs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="521" selection-start-line="521" selection-end-line="521" />
         </state>
       </provider>
     </entry>

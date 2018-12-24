@@ -333,7 +333,7 @@ def hirlevel_feliratkozas_foglalt_felulv2(driver, varbongeszo, ido, varurl, vart
                                           varteszteset_kepek,
                                           varslaido, email, irszam, vnev, knev,
                                           tooltipp1, tooltipp2, tooltipp3, varkepet_keszit=True,
-                                          kepek_path='c:/kepek/kepek/'):
+                                          kepek_path='c:/kepek/kepek/', varcookief = True):
     '''
     Hírlevél feliratkozást teszteli foglalt email címmel. Ha megfelelő hibaüzenet jelenik meg, akkor sikeres a teszt.
 
@@ -383,9 +383,12 @@ def hirlevel_feliratkozas_foglalt_felulv2(driver, varbongeszo, ido, varurl, vart
             varkepindex = 0
         else:
             kepek_helye = ''
-        # driver = webdriver.Chrome('C:\python\selenium\webdriver\chrome2\chromedriver.exe')
-        driver.maximize_window()
         driver.get(varurl)
+        if varcookief:
+            try:
+                seged_cs.cookiemegnyom(driver, True)
+            except:
+                print('nincs cooki')
         if ido > 0:
             time.sleep(ido)
             varidodb = varidodb + 1
