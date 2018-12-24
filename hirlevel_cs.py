@@ -21,7 +21,7 @@ def cookiemegnyom(driver):
 def hirlevel_feliratkozas_felulv2(driver, varbongeszo, ido, varurl, varteszteset_neve, varteszteset_leiras,
                                   varteszteset_kepek,
                                   varslaido, email, irszam, vnev, knev,
-                                  tooltipp1, tooltipp2, tooltipp3, varkepet_keszit=True, kepek_path='c:/kepek/kepek/'):
+                                  tooltipp1, tooltipp2, tooltipp3, varkepet_keszit=True, kepek_path='c:/kepek/kepek/', varcookief= True):
     '''
     Hírlevél feliratkozást csinál az oldal tetején lévő hírlevél feliratkozás ikonon keresztül.
 
@@ -55,7 +55,6 @@ def hirlevel_feliratkozas_felulv2(driver, varbongeszo, ido, varurl, varteszteset
         from selenium.common.exceptions import NoSuchElementException
         print(varteszteset_neve + ' elindult')
         # driver = webdriver.Chrome('C:\python\selenium\webdriver\chrome3\chromedriver.exe')
-        # driver.implicitly_wait(6)
         varidodb = 0
         # Teszteset sikerességét ezzel a logikai változóval viszgáljuk. True-ra állítjuk.
         teszteset_sikeres = True
@@ -72,8 +71,12 @@ def hirlevel_feliratkozas_felulv2(driver, varbongeszo, ido, varurl, varteszteset
         else:
             kepek_helye = ''
         # driver = webdriver.Chrome('C:\python\selenium\webdriver\chrome5\chromedriver.exe')
-        # driver.maximize_window()
         driver.get(varurl)
+        if varcookief:
+            try:
+                seged_cs.cookiemegnyom(driver, True)
+            except:
+                print('nincs cooki')
         if ido > 0:
             time.sleep(ido)
             varidodb = varidodb + 1
